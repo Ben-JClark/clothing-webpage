@@ -5,6 +5,8 @@
   flex-direction: row-reverse;
 }
 
+/* Shopping Cart */
+
 .cart-button {
   margin-right: 5%;
   background-color: rgb(255, 242, 230);
@@ -26,7 +28,6 @@
   width: 300px;
 }
 
-/* Cart Item */
 .cart-prod-container {
   padding: 20px;
   display: flex;

@@ -1,3 +1,14 @@
-.prod-image-src {
-  max-width: 450px;
+@media (max-width: 520px) {
+  .prod-image {
+    padding-left: 5%;
+  }
+  .prod-image-src {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 521px) {
+  .prod-image-src {
+    max-width: 450px;
+  }
 }

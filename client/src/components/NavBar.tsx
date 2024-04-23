@@ -4,9 +4,13 @@ import { useState } from "react";
 import CartListing from "./CartListing";
 
 interface Props {
-  cartItems: CartItem[] | undefined;
+  cartItems: CartItem[] | undefined; // The cart items to display
 }
 
+/**
+ * Displays a navigation bar with a shopping cart button.
+ * If the button is pressed a list of items are shown.
+ */
 function NavBar({ cartItems }: Props) {
   const [cartVisable, setCartVisable] = useState<boolean>(false);
 
@@ -16,6 +20,9 @@ function NavBar({ cartItems }: Props) {
     cartItemQty += item.qty;
   });
 
+  /**
+   * Toggle the shopping cart overlay
+   */
   function toggleCart() {
     setCartVisable((prev) => {
       return !prev;
@@ -29,6 +36,7 @@ function NavBar({ cartItems }: Props) {
           My Cart &#40; {cartItemQty} &#41;
         </div>
       </div>
+      {/* IF cartVisable THEN display then items in the shopping cart */}
       {cartVisable ? (
         <div className="cart-container">
           {cartItems?.map((item: CartItem) => {

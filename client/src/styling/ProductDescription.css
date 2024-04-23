@@ -18,9 +18,20 @@
   color: black;
 }
 
+@media (max-width: 520px) {
+  .descr-text {
+    width: 90%;
+  }
+}
+
+@media (min-width: 521px) {
+  .descr-text {
+    width: 30em;
+  }
+}
+
 .descr-text {
   color: hsl(0, 0%, 53%);
-  width: 30em;
   padding-bottom: 2em;
   font-size: medium;
   overflow-wrap: break-word;

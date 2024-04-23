@@ -4,6 +4,9 @@ interface Props {
   imageURL: string;
 }
 
+/**
+ * Display the image of the product
+ */
 function ProductImage({ imageURL }: Props) {
   return (
     <div className="prod-image">

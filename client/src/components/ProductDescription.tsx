@@ -6,14 +6,21 @@ import type { Size } from "../types/types";
 import type { CartItem } from "../types/types";
 
 interface Props {
-  product: Product;
-  cartItems: CartItem[] | undefined;
-  setCartItems: React.Dispatch<React.SetStateAction<CartItem[] | undefined>>;
+  product: Product; // The product description we want to display
+  cartItems: CartItem[] | undefined; // The items in the shopping cart
+  setCartItems: React.Dispatch<React.SetStateAction<CartItem[] | undefined>>; // Setstate hook to set the items in the shopping cart
 }
 
+/**
+ * Display the description of the product along with buttons to select various sizes.
+ * Also handles Add product to cart functionality
+ */
 function ProductDescription({ product, cartItems, setCartItems }: Props) {
   const [selectedSize, setSelectedSize] = useState<Size>();
 
+  /**
+   * Add the product along with the selected size to the shopping cart
+   */
   function addToCart() {
     // Check if the user selected a size
     if (selectedSize === undefined || selectedSize === null) {
@@ -23,7 +30,7 @@ function ProductDescription({ product, cartItems, setCartItems }: Props) {
     }
 
     setCartItems((prev: CartItem[] | undefined) => {
-      // if there are no items in the shopping cart
+      // if there are no items in the shopping cart THEN set the cart to this one item
       if (prev === undefined || prev === null) {
         const item: CartItem = {
           id: product.id,
@@ -35,7 +42,7 @@ function ProductDescription({ product, cartItems, setCartItems }: Props) {
         };
         return [item];
       }
-      // Check if the cart already has the same item, if so just increment the item qty
+      // If the cart already has the same item THEN just increment the item qty
       const itemIndex = cartItems?.findIndex((item: CartItem) => {
         return item.id === product.id && item.size.id === selectedSize.id;
       });
@@ -47,8 +54,7 @@ function ProductDescription({ product, cartItems, setCartItems }: Props) {
           return item;
         });
       }
-
-      // else add the item to the cart
+      // else the item is not in the shopping cart, so add the item to the cart
       else {
         const item: CartItem = {
           id: product.id,
@@ -63,6 +69,7 @@ function ProductDescription({ product, cartItems, setCartItems }: Props) {
     });
   }
 
+  // Formatter to display the price in a currency style
   const formatter = new Intl.NumberFormat("en-NZ", {
     style: "currency",
     currency: "NZD",
@@ -78,6 +85,7 @@ function ProductDescription({ product, cartItems, setCartItems }: Props) {
         SIZE<em>*</em> <strong>{selectedSize?.label}</strong>
       </p>
       <div className="btn-container">
+        {/* Display the size buttons */}
         {product.sizeOptions.map((size: Size) => {
           return (
             <SizeButton

@@ -1,10 +1,15 @@
 import type { CartItem } from "../types/types";
 
 interface Props {
-  cartItem: CartItem;
+  cartItem: CartItem; // The item to display
 }
 
+/**
+ * Displays a product listing within a shopping cart.
+ * An image will be displayed to the left and a description to the right.
+ */
 function CartListing({ cartItem }: Props) {
+  // Formatter to display the price in a currency style
   const formatter = new Intl.NumberFormat("en-NZ", {
     style: "currency",
     currency: "NZD",
