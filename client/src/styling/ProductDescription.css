@@ -1,0 +1,47 @@
+.descr-header {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.size-text {
+  font-size: small;
+  color: #888888;
+  font-weight: 600;
+}
+
+.size-text em {
+  color: #c90000;
+  margin-right: 0.5em;
+}
+
+.size-text strong {
+  color: black;
+}
+
+.descr-text {
+  color: hsl(0, 0%, 53%);
+  width: 30em;
+  padding-bottom: 2em;
+  font-size: medium;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+}
+
+.add-btn {
+  border: solid;
+  width: fit-content;
+  cursor: pointer;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 3em;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  transition: 0.2s;
+  color: white;
+  background-color: black;
+  border-color: black;
+}
