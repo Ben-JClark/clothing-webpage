@@ -16,16 +16,16 @@ Install node modules
 ```
 npm install
 ```
-### To start the React project
+To start the React project
 ```
 npm start
 ```
-### Alternativly compile to HTML, Javascript, and CSS files
+### Compile the project to HTML, Javascript, and CSS files
 Build the project
 ```
 npm run build
 ```
-If you want to serve these satic pages, a simple way is to use the "serve" package.
+If you want to serve these static pages, a simple way is to use the "serve" package.
 ```
 npm install -g serve
 ```
